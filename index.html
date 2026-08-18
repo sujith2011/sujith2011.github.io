@@ -1,0 +1,2453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>EngineerTools Hub</title>
+
+
+<style>
+
+/* =====================================================
+   GENERAL
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #263238;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header {
+    background: #12355b;
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 16px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    background: #e9f1f9;
+
+    text-align: center;
+
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    color: #12355b;
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 18px;
+
+    color: #52606d;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 28px;
+
+    background: #1769aa;
+
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    background: #0d568f;
+}
+
+
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+
+section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 65px 20px;
+}
+
+section h2 {
+    text-align: center;
+
+    color: #12355b;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.section-description {
+    text-align: center;
+
+    color: #68737d;
+
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.card-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+
+    gap: 22px;
+}
+
+.card {
+
+    background: white;
+
+    border: 1px solid #dce3ea;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: #174a75;
+
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #68737d;
+
+    font-size: 14px;
+}
+
+.card-button {
+
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #1769aa;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.card-button:hover {
+    text-decoration: underline;
+}
+
+.price {
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    color: #1769aa;
+}
+
+
+/* =====================================================
+   CALCULATOR SECTION
+   ===================================================== */
+
+.calculator-section {
+
+    background: white;
+
+    max-width: none;
+
+    padding-left:
+        max(20px, calc((100% - 900px) / 2));
+
+    padding-right:
+        max(20px, calc((100% - 900px) / 2));
+}
+
+.calculator {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    background: #f8fafc;
+
+    border: 1px solid #dce3ea;
+
+    border-radius: 10px;
+
+    padding: 30px;
+}
+
+.calculator label {
+
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.calculator input,
+.calculator select,
+.calculator textarea {
+
+    width: 100%;
+
+    padding: 11px;
+
+    font-size: 16px;
+
+    border: 1px solid #bcc7d3;
+
+    border-radius: 6px;
+
+    margin-bottom: 18px;
+}
+
+.calculator textarea {
+
+    height: 100px;
+
+    font-family: monospace;
+
+    resize: vertical;
+}
+
+.calculate-button {
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #1769aa;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.calculate-button:hover {
+
+    background: #0d568f;
+}
+
+.result {
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: 1px solid #dce3ea;
+
+    border-radius: 6px;
+}
+
+.result-title {
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+    color: #12355b;
+}
+
+.result-value {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #1769aa;
+}
+
+.calculation {
+
+    margin-top: 10px;
+
+    font-family: monospace;
+
+    color: #52606d;
+}
+
+.error {
+
+    color: #c62828;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   RADIO BUTTONS
+   ===================================================== */
+
+.mode-container {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+}
+
+.mode-container label {
+
+    font-weight: normal;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+
+    background: #12355b;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px 20px;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .nav-links {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero h1 {
+
+        font-size: 32px;
+    }
+
+    .hero p {
+
+        font-size: 16px;
+    }
+
+    .calculator {
+
+        padding: 20px;
+    }
+
+    .mode-container {
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+    <div class="logo">
+        EngineerTools Hub
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#excel">
+            Excel Templates
+        </a>
+
+        <a href="#tools">
+            Engineering Tools
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HOME
+     ===================================================== -->
+
+<section class="hero" id="home">
+
+    <h1>
+        Practical Tools for Engineers
+    </h1>
+
+    <p>
+
+        Ready-to-use Excel templates and
+        simple engineering calculators
+        designed to save time and reduce
+        repetitive work.
+
+    </p>
+
+    <a
+        class="hero-button"
+        href="#tools">
+
+        Explore Engineering Tools
+
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXCEL TEMPLATES
+     ===================================================== -->
+
+<section id="excel">
+
+    <h2>
+        Excel Templates
+    </h2>
+
+    <p class="section-description">
+
+        Useful spreadsheets for engineering,
+        project management and everyday work.
+
+    </p>
+
+
+    <div class="card-container">
+
+
+        <div class="card">
+
+            <h3>
+                Staff Roster Template
+            </h3>
+
+            <p>
+
+                Plan shifts, assign staff and
+                maintain a clear monthly roster.
+
+            </p>
+
+            <div class="price">
+                Coming Soon
+            </div>
+
+            <a class="card-button" href="#">
+                View Template →
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                Project Cost Calculator
+            </h3>
+
+            <p>
+
+                Estimate material, labour and
+                other project costs.
+
+            </p>
+
+            <div class="price">
+                Coming Soon
+            </div>
+
+            <a class="card-button" href="#">
+                View Template →
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                Maintenance Tracker
+            </h3>
+
+            <p>
+
+                Track equipment maintenance,
+                service dates and pending
+                activities.
+
+            </p>
+
+            <div class="price">
+                Coming Soon
+            </div>
+
+            <a class="card-button" href="#">
+                View Template →
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                Engineering Calculation Sheet
+            </h3>
+
+            <p>
+
+                Structured workbook for commonly
+                used engineering calculations.
+
+            </p>
+
+            <div class="price">
+                Coming Soon
+            </div>
+
+            <a class="card-button" href="#">
+                View Template →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ENGINEERING TOOLS
+     ===================================================== -->
+
+<section id="tools">
+
+    <h2>
+        Engineering Tools
+    </h2>
+
+    <p class="section-description">
+
+        Free browser-based calculators and
+        utilities for engineers.
+
+    </p>
+
+
+    <div class="card-container">
+
+
+        <div class="card">
+
+            <h3>
+                Modbus CRC Calculator
+            </h3>
+
+            <p>
+
+                Calculate Modbus RTU CRC-16
+                from hexadecimal data.
+
+            </p>
+
+            <a
+                class="card-button"
+                href="#modbus">
+
+                Open Tool →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                4–20 mA Calculator
+            </h3>
+
+            <p>
+
+                Convert current values into
+                engineering units and back.
+
+            </p>
+
+            <a
+                class="card-button"
+                href="#current">
+
+                Open Tool →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                Unit Converter
+            </h3>
+
+            <p>
+
+                Convert common engineering
+                units quickly.
+
+            </p>
+
+            <a
+                class="card-button"
+                href="#unit">
+
+                Open Tool →
+
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                Interest Calculator
+            </h3>
+
+            <p>
+
+                Calculate simple and compound
+                interest.
+
+            </p>
+
+            <a
+                class="card-button"
+                href="#interest">
+
+                Open Tool →
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MODBUS CRC CALCULATOR
+     ===================================================== -->
+
+<section
+    id="modbus"
+    class="calculator-section">
+
+    <h2>
+        Modbus RTU CRC-16 Calculator
+    </h2>
+
+    <p class="section-description">
+
+        Enter the Modbus RTU message in
+        hexadecimal format.
+
+    </p>
+
+
+    <div class="calculator">
+
+        <label for="hexInput">
+
+            Modbus Data
+
+        </label>
+
+        <textarea
+            id="hexInput"
+            placeholder="Example: 01 03 00 00 00 0A">
+        </textarea>
+
+
+        <button
+            class="calculate-button"
+            onclick="calculateCRC()">
+
+            Calculate CRC
+
+        </button>
+
+
+        <div class="result">
+
+            <div class="result-title">
+                CRC Result
+            </div>
+
+            <div
+                id="crcResult"
+                class="result-value">
+
+                --
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     4-20mA CALCULATOR
+     ===================================================== -->
+
+<section
+    id="current"
+    class="calculator-section">
+
+    <h2>
+        4–20 mA Engineering Range Calculator
+    </h2>
+
+    <p class="section-description">
+
+        Convert a 4–20 mA signal to an
+        engineering value or convert an
+        engineering value back to current.
+
+    </p>
+
+
+    <div class="calculator">
+
+
+        <div class="mode-container">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="currentMode"
+                    value="currentToValue"
+                    checked
+                    onchange="updateMode()">
+
+                Current → Engineering Value
+
+            </label>
+
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="currentMode"
+                    value="valueToCurrent"
+                    onchange="updateMode()">
+
+                Engineering Value → Current
+
+            </label>
+
+        </div>
+
+
+
+        <div id="currentInputContainer">
+
+            <label for="currentInput">
+
+                Current (mA)
+
+            </label>
+
+            <input
+                type="number"
+                id="currentInput"
+                step="any"
+                placeholder="Example: 12">
+
+        </div>
+
+
+
+        <div id="valueInputContainer"
+             style="display:none;">
+
+            <label for="valueInput">
+
+                Engineering Value
+
+            </label>
+
+            <input
+                type="number"
+                id="valueInput"
+                step="any"
+                placeholder="Example: 50">
+
+        </div>
+
+
+
+        <label for="rangeMin">
+
+            Engineering Range Minimum
+
+        </label>
+
+        <input
+            type="number"
+            id="rangeMin"
+            step="any"
+            placeholder="Example: 0">
+
+
+
+        <label for="rangeMax">
+
+            Engineering Range Maximum
+
+        </label>
+
+        <input
+            type="number"
+            id="rangeMax"
+            step="any"
+            placeholder="Example: 100">
+
+
+
+        <label for="unit">
+
+            Engineering Unit
+
+        </label>
+
+        <input
+            type="text"
+            id="unit"
+            placeholder="Example: bar">
+
+
+
+        <button
+            class="calculate-button"
+            onclick="calculate420()">
+
+            Calculate
+
+        </button>
+
+
+
+        <div class="result">
+
+            <div class="result-title">
+                Result
+            </div>
+
+            <div
+                id="420Result"
+                class="result-value">
+
+                --
+
+            </div>
+
+            <div
+                id="420Calculation"
+                class="calculation">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     UNIT CONVERTER
+     ===================================================== -->
+
+<section
+    id="unit"
+    class="calculator-section">
+
+    <h2>
+        Engineering Unit Converter
+    </h2>
+
+    <p class="section-description">
+
+        Convert commonly used engineering
+        units quickly.
+
+    </p>
+
+
+    <div class="calculator">
+
+
+        <label for="conversionType">
+
+            Conversion Type
+
+        </label>
+
+        <select
+            id="conversionType"
+            onchange="updateUnitOptions()">
+
+            <option value="length">
+                Length
+            </option>
+
+            <option value="pressure">
+                Pressure
+            </option>
+
+            <option value="temperature">
+                Temperature
+            </option>
+
+            <option value="mass">
+                Mass
+            </option>
+
+            <option value="area">
+                Area
+            </option>
+
+            <option value="volume">
+                Volume
+            </option>
+
+            <option value="flow">
+                Flow
+            </option>
+
+            <option value="speed">
+                Speed
+            </option>
+
+        </select>
+
+
+
+        <label for="fromUnit">
+
+            From
+
+        </label>
+
+        <select id="fromUnit">
+        </select>
+
+
+
+        <label for="toUnit">
+
+            To
+
+        </label>
+
+        <select id="toUnit">
+        </select>
+
+
+
+        <label for="unitInput">
+
+            Value
+
+        </label>
+
+        <input
+            type="number"
+            id="unitInput"
+            step="any"
+            placeholder="Enter value">
+
+
+
+        <button
+            class="calculate-button"
+            onclick="convertUnit()">
+
+            Convert
+
+        </button>
+
+
+
+        <div class="result">
+
+            <div class="result-title">
+                Result
+            </div>
+
+            <div
+                id="unitResult"
+                class="result-value">
+
+                --
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTEREST CALCULATOR
+     ===================================================== -->
+
+<section
+    id="interest"
+    class="calculator-section">
+
+    <h2>
+        Interest Calculator
+    </h2>
+
+    <p class="section-description">
+
+        Calculate simple or compound interest.
+
+    </p>
+
+
+    <div class="calculator">
+
+
+        <label for="interestType">
+
+            Interest Type
+
+        </label>
+
+        <select id="interestType">
+
+            <option value="simple">
+                Simple Interest
+            </option>
+
+            <option value="compound">
+                Compound Interest
+            </option>
+
+        </select>
+
+
+
+        <label for="principal">
+
+            Principal Amount
+
+        </label>
+
+        <input
+            type="number"
+            id="principal"
+            step="any"
+            placeholder="Example: 100000">
+
+
+
+        <label for="interestRate">
+
+            Annual Interest Rate (%)
+
+        </label>
+
+        <input
+            type="number"
+            id="interestRate"
+            step="any"
+            placeholder="Example: 7.5">
+
+
+
+        <label for="interestTime">
+
+            Time (Years)
+
+        </label>
+
+        <input
+            type="number"
+            id="interestTime"
+            step="any"
+            placeholder="Example: 5">
+
+
+
+        <div id="compoundFrequencyContainer"
+             style="display:none;">
+
+            <label for="compoundFrequency">
+
+                Compounding Frequency
+
+            </label>
+
+            <select id="compoundFrequency">
+
+                <option value="1">
+                    Annually
+                </option>
+
+                <option value="2">
+                    Half-Yearly
+                </option>
+
+                <option value="4">
+                    Quarterly
+                </option>
+
+                <option value="12">
+                    Monthly
+                </option>
+
+                <option value="365">
+                    Daily
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <button
+            class="calculate-button"
+            onclick="calculateInterest()">
+
+            Calculate
+
+        </button>
+
+
+
+        <div class="result">
+
+            <div class="result-title">
+                Result
+            </div>
+
+            <div
+                id="interestResult"
+                class="result-value">
+
+                --
+
+            </div>
+
+            <div
+                id="interestDetails"
+                class="calculation">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+     ===================================================== -->
+
+<section id="contact">
+
+    <h2>
+        Contact
+    </h2>
+
+    <p class="section-description">
+
+        Have an Excel requirement or an
+        engineering calculation you'd like
+        to see here?
+
+        Get in touch.
+
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <p>
+
+        © 2026 EngineerTools Hub.
+        Practical tools for engineers.
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   MODBUS CRC-16
+   ===================================================== */
+
+function calculateCRC() {
+
+    const input =
+        document.getElementById("hexInput")
+        .value
+        .trim();
+
+    const result =
+        document.getElementById("crcResult");
+
+
+    if (input === "") {
+
+        result.innerHTML =
+            '<span class="error">' +
+            'Please enter hexadecimal data.' +
+            '</span>';
+
+        return;
+    }
+
+
+    const cleanInput =
+        input.replace(/[\s,]+/g, "");
+
+
+    if (!/^[0-9a-fA-F]+$/.test(cleanInput)) {
+
+        result.innerHTML =
+            '<span class="error">' +
+            'Invalid hexadecimal data.' +
+            '</span>';
+
+        return;
+    }
+
+
+    if (cleanInput.length % 2 !== 0) {
+
+        result.innerHTML =
+            '<span class="error">' +
+            'Hexadecimal data must contain complete bytes.' +
+            '</span>';
+
+        return;
+    }
+
+
+    const bytes = [];
+
+
+    for (
+        let i = 0;
+        i < cleanInput.length;
+        i += 2
+    ) {
+
+        bytes.push(
+            parseInt(
+                cleanInput.substring(i, i + 2),
+                16
+            )
+        );
+
+    }
+
+
+    let crc = 0xFFFF;
+
+
+    for (let i = 0; i < bytes.length; i++) {
+
+        crc ^= bytes[i];
+
+
+        for (let j = 0; j < 8; j++) {
+
+            if ((crc & 0x0001) !== 0) {
+
+                crc >>= 1;
+
+                crc ^= 0xA001;
+
+            }
+            else {
+
+                crc >>= 1;
+
+            }
+
+        }
+
+    }
+
+
+    const lowByte =
+        crc & 0xFF;
+
+    const highByte =
+        (crc >> 8) & 0xFF;
+
+
+    const lowHex =
+        lowByte
+        .toString(16)
+        .padStart(2, "0")
+        .toUpperCase();
+
+
+    const highHex =
+        highByte
+        .toString(16)
+        .padStart(2, "0")
+        .toUpperCase();
+
+
+    result.innerHTML =
+        lowHex + " " + highHex;
+
+}
+
+
+/* =====================================================
+   4-20mA MODE
+   ===================================================== */
+
+function updateMode() {
+
+    const mode =
+        document.querySelector(
+            'input[name="currentMode"]:checked'
+        ).value;
+
+
+    document.getElementById(
+        "currentInputContainer"
+    ).style.display =
+        mode === "currentToValue"
+        ? "block"
+        : "none";
+
+
+    document.getElementById(
+        "valueInputContainer"
+    ).style.display =
+        mode === "valueToCurrent"
+        ? "block"
+        : "none";
+
+}
+
+
+/* =====================================================
+   4-20mA CALCULATOR
+   ===================================================== */
+
+function calculate420() {
+
+    const mode =
+        document.querySelector(
+            'input[name="currentMode"]:checked'
+        ).value;
+
+
+    const rangeMin =
+        parseFloat(
+            document.getElementById(
+                "rangeMin"
+            ).value
+        );
+
+
+    const rangeMax =
+        parseFloat(
+            document.getElementById(
+                "rangeMax"
+            ).value
+        );
+
+
+    const unit =
+        document.getElementById(
+            "unit"
+        ).value.trim();
+
+
+    const result =
+        document.getElementById(
+            "420Result"
+        );
+
+
+    const calculation =
+        document.getElementById(
+            "420Calculation"
+        );
+
+
+    if (
+        isNaN(rangeMin) ||
+        isNaN(rangeMax)
+    ) {
+
+        result.innerHTML =
+            '<span class="error">' +
+            'Please enter the engineering range.' +
+            '</span>';
+
+        calculation.innerHTML = "";
+
+        return;
+    }
+
+
+    if (rangeMax <= rangeMin) {
+
+        result.innerHTML =
+            '<span class="error">' +
+            'Maximum must be greater than minimum.' +
+            '</span>';
+
+        calculation.innerHTML = "";
+
+        return;
+    }
+
+
+    if (mode === "currentToValue") {
+
+        const current =
+            parseFloat(
+                document.getElementById(
+                    "currentInput"
+                ).value
+            );
+
+
+        if (isNaN(current)) {
+
+            result.innerHTML =
+                '<span class="error">' +
+                'Please enter current.' +
+                '</span>';
+
+            calculation.innerHTML = "";
+
+            return;
+        }
+
+
+        if (
+            current < 4 ||
+            current > 20
+        ) {
+
+            result.innerHTML =
+                '<span class="error">' +
+                'Current must be between 4 and 20 mA.' +
+                '</span>';
+
+            calculation.innerHTML = "";
+
+            return;
+        }
+
+
+        const engineeringValue =
+            rangeMin +
+            ((current - 4) / 16) *
+            (rangeMax - rangeMin);
+
+
+        result.innerHTML =
+            engineeringValue.toFixed(4) +
+            (unit ? " " + unit : "");
+
+
+        calculation.innerHTML =
+            "Value = " +
+            rangeMin +
+            " + ((" +
+            current +
+            " - 4) / 16) × (" +
+            rangeMax +
+            " - " +
+            rangeMin +
+            ")";
+
+    }
+
+    else {
+
+        const engineeringValue =
+            parseFloat(
+                document.getElementById(
+                    "valueInput"
+                ).value
+            );
+
+
+        if (isNaN(engineeringValue)) {
+
+            result.innerHTML =
+                '<span class="error">' +
+                'Please enter engineering value.' +
+                '</span>';
+
+            calculation.innerHTML = "";
+
+            return;
+        }
+
+
+        if (
+            engineeringValue < rangeMin ||
+            engineeringValue > rangeMax
+        ) {
+
+            result.innerHTML =
+                '<span class="error">' +
+                'Engineering value is outside the selected range.' +
+                '</span>';
+
+            calculation.innerHTML = "";
+
+            return;
+        }
+
+
+        const current =
+            4 +
+            ((engineeringValue - rangeMin) /
+            (rangeMax - rangeMin)) *
+            16;
+
+
+        result.innerHTML =
+            current.toFixed(4) +
+            " mA";
+
+
+        calculation.innerHTML =
+            "Current = 4 + ((" +
+            engineeringValue +
+            " - " +
+            rangeMin +
+            ") / (" +
+            rangeMax +
+            " - " +
+            rangeMin +
+            ")) × 16";
+
+    }
+
+}
+
+
+/* =====================================================
+   UNIT CONVERTER DATA
+   ===================================================== */
+
+const units = {
+
+    length: {
+
+        meter: 1,
+
+        kilometer: 1000,
+
+        centimeter: 0.01,
+
+        millimeter: 0.001,
+
+        inch: 0.0254,
+
+        foot: 0.3048,
+
+        yard: 0.9144,
+
+        mile: 1609.344
+
+    },
+
+
+    pressure: {
+
+        pascal: 1,
+
+        kilopascal: 1000,
+
+        bar: 100000,
+
+        psi: 6894.757293,
+
+        atmosphere: 101325,
+
+        kgfcm2: 98066.5
+
+    },
+
+
+    mass: {
+
+        kilogram: 1,
+
+        gram: 0.001,
+
+        milligram: 0.000001,
+
+        tonne: 1000,
+
+        pound: 0.45359237,
+
+        ounce: 0.0283495231
+
+    },
+
+
+    area: {
+
+        square_meter: 1,
+
+        square_kilometer: 1000000,
+
+        square_centimeter: 0.0001,
+
+        square_foot: 0.09290304,
+
+        square_inch: 0.00064516,
+
+        acre: 4046.8564224
+
+    },
+
+
+    volume: {
+
+        cubic_meter: 1,
+
+        liter: 0.001,
+
+        milliliter: 0.000001,
+
+        cubic_centimeter: 0.000001,
+
+        cubic_foot: 0.0283168466,
+
+        gallon: 0.00378541178
+
+    },
+
+
+    flow: {
+
+        "m3/s": 1,
+
+        "m3/min": 1 / 60,
+
+        "m3/hour": 1 / 3600,
+
+        "liter/s": 0.001,
+
+        "liter/min": 0.001 / 60,
+
+        "liter/hour": 0.001 / 3600,
+
+        "gallon/min": 0.00378541178 / 60
+
+    },
+
+
+    speed: {
+
+        "m/s": 1,
+
+        "km/h": 1000 / 3600,
+
+        "mph": 1609.344 / 3600,
+
+        "ft/s": 0.3048
+
+    }
+
+};
+
+
+/* =====================================================
+   TEMPERATURE UNITS
+   ===================================================== */
+
+const temperatureUnits = [
+
+    "Celsius",
+
+    "Fahrenheit",
+
+    "Kelvin"
+
+];
+
+
+/* =====================================================
+   DISPLAY UNIT NAMES
+   ===================================================== */
+
+const unitNames = {
+
+    meter: "Meter",
+
+    kilometer: "Kilometer",
+
+    centimeter: "Centimeter",
+
+    millimeter: "Millimeter",
+
+    inch: "Inch",
+
+    foot: "Foot",
+
+    yard: "Yard",
+
+    mile: "Mile",
+
+    pascal: "Pascal",
+
+    kilopascal: "Kilopascal",
+
+    bar: "bar",
+
+    psi: "psi",
+
+    atmosphere: "Atmosphere",
+
+    kgfcm2: "kgf/cm²",
+
+    kilogram: "Kilogram",
+
+    gram: "Gram",
+
+    milligram: "Milligram",
+
+    tonne: "Tonne",
+
+    pound: "Pound",
+
+    ounce: "Ounce",
+
+    square_meter: "m²",
+
+    square_kilometer: "km²",
+
+    square_centimeter: "cm²",
+
+    square_foot: "ft²",
+
+    square_inch: "in²",
+
+    acre: "Acre",
+
+    cubic_meter: "m³",
+
+    liter: "Liter",
+
+    milliliter: "Milliliter",
+
+    cubic_centimeter: "cm³",
+
+    cubic_foot: "ft³",
+
+    gallon: "Gallon"
+
+};
+
+
+/* =====================================================
+   UPDATE UNIT OPTIONS
+   ===================================================== */
+
+function updateUnitOptions() {
+
+    const type =
+        document.getElementById(
+            "conversionType"
+        ).value;
+
+
+    const from =
+        document.getElementById(
+            "fromUnit"
+        );
+
+
+    const to =
+        document.getElementById(
+            "toUnit"
+        );
+
+
+    from.innerHTML = "";
+
+    to.innerHTML = "";
+
+
+    let options;
+
+
+    if (type === "temperature") {
+
+        options =
+            temperatureUnits;
+
+    }
+    else {
+
+        options =
+            Object.keys(
+                units[type]
+            );
+
+    }
+
+
+    options.forEach(function(unit) {
+
+        const option1 =
+            document.createElement(
+                "option"
+            );
+
+        const option2 =
+            document.createElement(
+                "option"
+            );
+
+
+        option1.value = unit;
+
+        option2.value = unit;
+
+
+        if (type === "temperature") {
+
+            option1.textContent =
+                unit;
+
+            option2.textContent =
+                unit;
+
+        }
+        else {
+
+            option1.textContent =
+                unitNames[unit] || unit;
+
+            option2.textContent =
+                unitNames[unit] || unit;
+
+        }
+
+
+        from.appendChild(option1);
+
+        to.appendChild(option2);
+
+    });
+
+
+    if (options.length > 1) {
+
+        to.selectedIndex = 1;
+
+    }
+
+}
+
+
+/* =====================================================
+   TEMPERATURE CONVERSION
+   ===================================================== */
+
+function convertTemperature(
+    value,
+    from,
+    to
+) {
+
+    let celsius;
+
+
+    if (from === "Celsius") {
+
+        celsius = value;
+
+    }
+    else if (from === "Fahrenheit") {
+
+        celsius =
+            (value - 32) *
+            5 / 9;
+
+    }
+    else {
+
+        celsius =
+            value - 273.15;
+
+    }
+
+
+    if (to === "Celsius") {
+
+        return celsius;
+
+    }
+
+
+    if (to === "Fahrenheit") {
+
+        return (
+            celsius * 9 / 5
+        ) + 32;
+
+    }
+
+
+    return celsius + 273.15;
+
+}
+
+
+/* =====================================================
+   UNIT CONVERSION
+   ===================================================== */
+
+function convertUnit() {
+
+    const type =
+        document.getElementById(
+            "conversionType"
+        ).value;
+
+
+    const from =
+        document.getElementById(
+            "fromUnit"
+        ).value;
+
+
+    const to =
+        document.getElementById(
+            "toUnit"
+        ).value;
+
+
+    const value =
+        parseFloat(
+            document.getElementById(
+                "unitInput"
+            ).value
+        );
+
+
+    const result =
+        document.getElementById(
+            "unitResult"
+        );
+
+
+    if (isNaN(value)) {
+
+        result.innerHTML =
+            '<span class="error">' +
+            'Please enter a value.' +
+            '</span>';
+
+        return;
+    }
+
+
+    let converted;
+
+
+    if (type === "temperature") {
+
+        converted =
+            convertTemperature(
+                value,
+                from,
+                to
+            );
+
+    }
+    else {
+
+        const baseValue =
+            value *
+            units[type][from];
+
+
+        converted =
+            baseValue /
+            units[type][to];
+
+    }
+
+
+    const fromName =
+        type === "temperature"
+        ? from
+        : (unitNames[from] || from);
+
+
+    const toName =
+        type === "temperature"
+        ? to
+        : (unitNames[to] || to);
+
+
+    result.innerHTML =
+
+        value.toLocaleString(
+            undefined,
+            {
+                maximumFractionDigits: 8
+            }
+        ) +
+
+        " " +
+
+        fromName +
+
+        " = " +
+
+        converted.toLocaleString(
+            undefined,
+            {
+                maximumFractionDigits: 8
+            }
+        ) +
+
+        " " +
+
+        toName;
+
+}
+
+
+/* =====================================================
+   INTEREST TYPE CHANGE
+   ===================================================== */
+
+document.getElementById(
+    "interestType"
+).addEventListener(
+    "change",
+    function() {
+
+        const container =
+            document.getElementById(
+                "compoundFrequencyContainer"
+            );
+
+
+        if (this.value === "compound") {
+
+            container.style.display =
+                "block";
+
+        }
+        else {
+
+            container.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   INTEREST CALCULATOR
+   ===================================================== */
+
+function calculateInterest() {
+
+    const type =
+        document.getElementById(
+            "interestType"
+        ).value;
+
+
+    const principal =
+        parseFloat(
+            document.getElementById(
+                "principal"
+            ).value
+        );
+
+
+    const rate =
+        parseFloat(
+            document.getElementById(
+                "interestRate"
+            ).value
+        );
+
+
+    const time =
+        parseFloat(
+            document.getElementById(
+                "interestTime"
+            ).value
+        );
+
+
+    const result =
+        document.getElementById(
+            "interestResult"
+        );
+
+
+    const details =
+        document.getElementById(
+            "interestDetails"
+        );
+
+
+    if (
+        isNaN(principal) ||
+        isNaN(rate) ||
+        isNaN(time)
+    ) {
+
+        result.innerHTML =
+            '<span class="error">' +
+            'Please enter all required values.' +
+            '</span>';
+
+        details.innerHTML = "";
+
+        return;
+    }
+
+
+    if (
+        principal < 0 ||
+        rate < 0 ||
+        time < 0
+    ) {
+
+        result.innerHTML =
+            '<span class="error">' +
+            'Values cannot be negative.' +
+            '</span>';
+
+        details.innerHTML = "";
+
+        return;
+    }
+
+
+    let interest;
+
+    let amount;
+
+
+    /* ---------------------------------------------
+       SIMPLE INTEREST
+       --------------------------------------------- */
+
+    if (type === "simple") {
+
+        interest =
+            principal *
+            rate *
+            time /
+            100;
+
+
+        amount =
+            principal +
+            interest;
+
+
+        result.innerHTML =
+            "Final Amount: ₹" +
+            amount.toLocaleString(
+                "en-IN",
+                {
+                    maximumFractionDigits: 2
+                }
+            );
+
+
+        details.innerHTML =
+
+            "Interest = ₹" +
+            interest.toLocaleString(
+                "en-IN",
+                {
+                    maximumFractionDigits: 2
+                }
+            ) +
+
+            "<br>" +
+
+            "Formula: SI = P × R × T / 100";
+
+    }
+
+
+    /* ---------------------------------------------
+       COMPOUND INTEREST
+       --------------------------------------------- */
+
+    else {
+
+        const frequency =
+            parseInt(
+                document.getElementById(
+                    "compoundFrequency"
+                ).value
+            );
+
+
+        amount =
+            principal *
+            Math.pow(
+                1 +
+                (
+                    rate /
+                    100 /
+                    frequency
+                ),
+                frequency * time
+            );
+
+
+        interest =
+            amount -
+            principal;
+
+
+        result.innerHTML =
+            "Final Amount: ₹" +
+            amount.toLocaleString(
+                "en-IN",
+                {
+                    maximumFractionDigits: 2
+                }
+            );
+
+
+        details.innerHTML =
+
+            "Interest = ₹" +
+            interest.toLocaleString(
+                "en-IN",
+                {
+                    maximumFractionDigits: 2
+                }
+            ) +
+
+            "<br>" +
+
+            "Compounding periods per year: " +
+            frequency;
+
+    }
+
+}
+
+
+/* =====================================================
+   INITIALISE UNIT CONVERTER
+   ===================================================== */
+
+updateUnitOptions();
+
+</script>
+
+
+</body>
+
+</html>
